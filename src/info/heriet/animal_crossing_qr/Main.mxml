@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:s="library://ns.adobe.com/flex/spark"
+               xmlns:mx="library://ns.adobe.com/flex/mx"
+               xmlns:ap="info.heriet.animal_crossing_qr.*"
+               >
+    <mx:VBox width="100%" height="100%" paddingTop="4" paddingLeft="4" paddingRight="4" paddingBottom="4">
+        <mx:Panel title="Profile" width="100%" height="8%" headerHeight="18" paddingRight="16">
+            <mx:HBox width="100%" height="100%" horizontalAlign="right" verticalAlign="middle">
+                <mx:Button id="initializeProfileButton" label="Set Profile"/>
+                <mx:Label text = "あなたの名前" />
+                <mx:TextInput id="profileAutherNameTextInput" text="" maxChars = "6" editable = "false" />
+                <mx:Label text = "あなたの村名" />
+                <mx:TextInput id="profileVillageNameTextInput" text="" maxChars = "6" editable = "false" />
+            </mx:HBox>
+        </mx:Panel>
+        <mx:HDividedBox width="100%" height="90%">
+            <mx:Panel title="Design List" height="100%" width="20%" headerHeight="18">
+                <mx:VBox width="100%" height="100%">
+                    <mx:List id="designList" labelField="@label" width="100%" height="75%" />
+                    <mx:Button id="loadSinglePixelArtButton" label="Load Sigle Image" width="100%" height="5%"/>
+                    <mx:Button id="loadProPixelArtButton" label="Load Pro Image" width="100%" height="5%"/>
+                    <mx:HRule width = "100%"/>
+                    <mx:Button id="loadQRCodeImageButton" label="Load QR Code" width="100%" height="5%"/>
+                    <mx:Button id="scanCameraButton" label="Scan from Camera" width="100%" height="5%"/>
+                </mx:VBox>
+            </mx:Panel>
+            <mx:VBox width="80%" height="100%">
+                <mx:VBox width="100%" height="45%">
+                    <mx:Panel title="Image" horizontalAlign="center" width="100%" height="90%" headerHeight="18">
+                        <ap:AnimalCrossingImageConverter height="100%" width="100%" />
+                    </mx:Panel>
+                    <mx:HBox width = "100%" height="5%">
+                        <mx:Label text = "デザイン名" />
+                        <mx:TextInput id="designNameTextInput" text="" maxChars = "12" editable = "true" />
+                        <mx:Label text = "作者名" />
+                        <mx:TextInput id="autherNameTextInput" text="" maxChars = "6" editable = "false" />
+                        <mx:Label text = "村名" />
+                        <mx:TextInput id="villageNameTextInput" text="" maxChars = "6" editable = "false" />
+                    </mx:HBox>
+                    <mx:HBox width = "100%" height="5%">
+                        <mx:Label text = "変換パレット" />
+                        <mx:ComboBox id="paletteComboBox" width="25%"> 
+                            <mx:ArrayCollection>
+                                <fx:Object label="内部パレット" data="0"/>
+                                <fx:Object label="目コピパレット" data="1"/>
+                            </mx:ArrayCollection>
+                        </mx:ComboBox>
+                        <mx:Button id="encodePixelArtButton" label="Encode QR Code" width="25%" />
+                        <mx:Button id="savePixelArtButton" label="Save Image" width="25%" />
+                    </mx:HBox>
+                </mx:VBox>
+                <mx:VBox width="100%" height="55%">
+                    <mx:Panel title="QR Code" horizontalAlign="center" width="100%" height="95%" headerHeight="18">
+                        <mx:Canvas id="qrCodeCanvas"  height="100%" width="100%" />
+                    </mx:Panel>
+                    <mx:HBox width = "100%" height="5%">
+                        <mx:Button id="saveQRCodeImageButton" label="Save QR Code Image" width="25%" />
+                    </mx:HBox>
+                </mx:VBox>
+            </mx:VBox>
+        </mx:HDividedBox>
+        <mx:Label id="statusLabel" width = "100%" height="2%" textAlign="right" />
+    </mx:VBox>
+</s:Application>

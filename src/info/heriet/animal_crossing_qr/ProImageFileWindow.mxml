@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml"
+    layout="absolute"
+    width="640"
+    height="580"
+    title="PROデザインの画像を選択してください"
+    showCloseButton="true"
+    creationComplete="init()">
+    <mx:Script source="ProImageFileWindow_include.as"/>
+    
+    <mx:VBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+        <mx:HBox width="100%" height="20%" horizontalAlign="center" verticalAlign="middle">
+            <mx:ComboBox id="modelComboBox" change="modelComboBox_changeHandler(event)"> 
+                <mx:ArrayCollection>
+                    <mx:Object label="シャツ 半袖" data="4"/>
+                    <mx:Object label="シャツ 長袖" data="3"/>
+                    <mx:Object label="シャツ ノースリーブ" data="5"/>
+                    
+                    <mx:Object label="ワンピース 半袖" data="1"/>
+                    <mx:Object label="ワンピース 長袖" data="0"/>
+                    <mx:Object label="ワンピース ノースリーブ" data="2"/>
+                    
+                    <mx:Object label="角のぼうし" data="6"/>
+                    <mx:Object label="ニットキャップ" data="7"/>
+                    <mx:Object label="顔出し看板" data="8"/>
+                </mx:ArrayCollection>
+            </mx:ComboBox>
+        </mx:HBox>
+        <mx:HBox id="separateFileReferenceViewGroup" width="100%" height="70%" horizontalAlign="center" verticalAlign="middle">
+            <mx:VBox width="25%" height="100%" horizontalAlign="center">
+                <mx:UIComponent id="frontFileReferenceView" width="128" height="128" />
+                <mx:Button id="frontFileReferenceButton" label="Front" mouseDown="frontFileReferenceButton_mouseDownHandler(event)"/>
+            </mx:VBox>
+            <mx:VBox width="25%" height="100%" horizontalAlign="center">
+                <mx:UIComponent id="backFileReferenceView" width="128" height="128"/>
+                <mx:Button id="backFileReferenceButton" label="Back" mouseDown="backFileReferenceButton_mouseDownHandler(event)"/>
+            </mx:VBox>
+            <mx:VBox width="25%" height="100%" horizontalAlign="center">
+                <mx:UIComponent id="leftFileReferenceView" width="128" height="128"/>
+                <mx:Button id="leftFileReferenceButton" label="Left" mouseDown="leftFileReferenceButton_mouseDownHandler(event)"/>
+            </mx:VBox>
+            <mx:VBox width="25%" height="100%" horizontalAlign="center">
+                <mx:UIComponent id="rightFileReferenceView" width="128" height="128"/>
+                <mx:Button id="rightFileReferenceButton" label="Right" mouseDown="rightFileReferenceButton_mouseDownHandler(event)"/>
+            </mx:VBox>
+        </mx:HBox>
+        <mx:HBox width="100%" height="10%" horizontalAlign="center" verticalAlign="middle">
+            <mx:Button id="okButton" label="OK" mouseDown="okButton_mouseDownHandler(event)"/>
+        </mx:HBox>
+        <mx:Label id="statusLabel" width = "100%" height="5%" textAlign="right" />
+    </mx:VBox>
+</mx:TitleWindow>

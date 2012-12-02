@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml"
+    layout="absolute"
+    width="600"
+    height="480"
+    title="プロフィール設定"
+    showCloseButton="true"
+    creationComplete="init()">
+    <mx:Script source="InitializeProfileWindow_include.as"/>
+    
+    <mx:VBox width="100%" height="100%" horizontalAlign="center" verticalAlign="middle">
+        <mx:HBox width="100%" height="70%" horizontalAlign="center" verticalAlign="middle">
+            <mx:VBox width="25%" height="100%" horizontalAlign="center">
+                <mx:HBox width = "100%" height="5%">
+                    <mx:Label text = "あなたの名前" />
+                    <mx:TextInput id="autherNameTextInput" text="" maxChars = "6" editable = "true" />
+                    <mx:Label text = "あなたの村名" />
+                    <mx:TextInput id="villageNameTextInput" text="" maxChars = "6" editable = "true" />
+                    <mx:Label text = "村" />
+                </mx:HBox>
+                <mx:UIComponent id="qrCodeReferenceView" width="400" height="240" />
+                <mx:HBox width = "100%" height="5%">
+                    <mx:Button id="qrCodeReferenceButton" label="Load QR Code Image" mouseDown="qrCodeReferenceButton_mouseDownHandler(event)" width="50%" />
+                    <mx:Button id="qrCodeScanButton" label="Scan QR Code" mouseDown="qrCodeScanButton_mouseDownHandler(event)" width="50%" />
+                </mx:HBox>
+            </mx:VBox>
+        </mx:HBox>
+        <mx:HBox width="100%" height="10%" horizontalAlign="center" verticalAlign="middle">
+            <mx:Button id="okButton" label="プロフィール設定" mouseDown="okButton_mouseDownHandler(event)"/>
+        </mx:HBox>
+        <mx:Label id="statusLabel" width = "100%" height="5%" textAlign="right" />
+    </mx:VBox>
+</mx:TitleWindow>
